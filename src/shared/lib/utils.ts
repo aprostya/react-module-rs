@@ -5,13 +5,13 @@ export const getWordInRegularCase = (word: string) => {
 };
 
 export const getSelectedFiltersQueryString = (
-  selectedFilters: IProductQueryParams['selectedFilters'],
+  selectedFilters: IProductQueryParams['selectedFilters']
 ) => {
   const filtersQueryParams: Array<string> = [];
   selectedFilters.map((filter) => {
     const { groupCategory, filters } = filter;
     filters.map((filterValue) =>
-      filtersQueryParams.push(`${groupCategory}=${filterValue}`),
+      filtersQueryParams.push(`${groupCategory}=${filterValue}`)
     );
   });
   return filtersQueryParams.join('&');

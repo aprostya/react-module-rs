@@ -17,7 +17,7 @@ export const fetchFilterData = createAsyncThunk(
   async () => {
     const response = await axios.get(API_ROUTES.FILTERS);
     return response.data;
-  },
+  }
 );
 
 const filterSlice = createSlice({
@@ -68,7 +68,7 @@ const filterSlice = createSlice({
           };
         });
         state.selectedFilters = selectedFilters;
-      },
+      }
     );
     builder.addCase(fetchFilterData.rejected, (state) => {
       state.status = STATUSES.ERROR;

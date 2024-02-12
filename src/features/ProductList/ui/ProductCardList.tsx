@@ -12,7 +12,7 @@ export const ProductCardList: React.FC = () => {
   const dispatch = useAppDispatch();
   const { cardList, status } = useSelector((state: RootState) => state.cards);
   const { searchValue, currentSort, selectedFilters } = useSelector(
-    (state: RootState) => state.filters,
+    (state: RootState) => state.filters
   );
 
   const sortedCardList = useMemo(() => {

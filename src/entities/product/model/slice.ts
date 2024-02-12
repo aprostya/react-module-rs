@@ -17,7 +17,7 @@ export const fetchCardData = createAsyncThunk(
   async (params: IProductQueryParams) => {
     const { searchValue, selectedFilters } = params;
     const isFiltersNotEmpty = selectedFilters.some(
-      (item) => item.filters.length > 0,
+      (item) => item.filters.length > 0
     );
     let response: AxiosResponse;
     if (isFiltersNotEmpty) {
@@ -25,14 +25,14 @@ export const fetchCardData = createAsyncThunk(
         `${
           API_ROUTES.CARDS
         }?search=${searchValue}&${getSelectedFiltersQueryString(
-          selectedFilters,
-        )}`,
+          selectedFilters
+        )}`
       );
     } else {
       response = await axios.get(`${API_ROUTES.CARDS}?search=${searchValue}`);
     }
     return response.data;
-  },
+  }
 );
 
 const cardSlice = createSlice({

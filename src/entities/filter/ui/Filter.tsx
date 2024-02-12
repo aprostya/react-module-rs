@@ -19,7 +19,7 @@ export const Filter: React.FC<IFilterItem> = (props) => {
   const getBtnClassname = (name: FilterType, filter: string) => {
     const btnClass = 'pure-button pure-button-secondary filter-button';
     const isActive = selectedFilters.some(
-      (item) => item.groupCategory === name && item.filters.includes(filter),
+      (item) => item.groupCategory === name && item.filters.includes(filter)
     );
     return classNames(btnClass, {
       [`filter-button--${filter}`]: isActive && name === FilterType.COLOR,

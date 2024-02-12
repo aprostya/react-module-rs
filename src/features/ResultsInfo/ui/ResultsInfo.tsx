@@ -5,7 +5,7 @@ import './results.scss';
 
 export const ResultsInfo: React.FC = () => {
   const cardListLength = useSelector(
-    (state: RootState) => state.cards.cardList.length,
+    (state: RootState) => state.cards.cardList.length
   );
 
   return (
