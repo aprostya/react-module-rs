@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import './ProductCardList.scss';
 import { ProductCard } from '../../../entities/product/ui/ProductCard/ProductCard';
-import { SkeletonMock } from '../../../shared/ui/ContentLoader';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, RootState } from '../../../app/appStore';
 import { fetchCardData } from '../../../entities/product/model/slice';
@@ -50,7 +49,7 @@ export const ProductCardList: React.FC = () => {
         }
 
       default:
-        return <SkeletonMock />;
+        return <div>Content loading error, please try again later</div>;
     }
   };
 
