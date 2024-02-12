@@ -1,4 +1,3 @@
-import { FiltersList } from '../features/FilterList/index';
 import { ProductCardList } from '../features/ProductList/index';
 import { ResultsInfo } from '../features/ResultsInfo/ui/ResultsInfo';
 import { Sort } from '../features/Sort/ui/Sort';
@@ -8,7 +7,6 @@ export const Main: React.FC = () => {
   return (
     <>
       <ProductSearch />
-      <FiltersList />
       <div className="sort-container">
         <div className="sort-wrapper">
           <ResultsInfo />
