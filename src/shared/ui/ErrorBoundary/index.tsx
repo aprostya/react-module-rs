@@ -11,7 +11,7 @@ interface State {
   errorInfo: ErrorInfo;
 }
 
-// TODO customise
+// TODO customise ? or to take error boundary from npm package
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {

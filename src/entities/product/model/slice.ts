@@ -11,6 +11,7 @@ const initialState: ICardsList = {
   status: STATUSES.LOADING,
 };
 
+// TODO createApi from redux toolkit ?
 export const fetchAbilityData = createAsyncThunk(
   'filters/fetchAbilityData',
   async (params: IProductQueryParams) => {
