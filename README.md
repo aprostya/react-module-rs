@@ -1,5 +1,7 @@
 Small beer search project.
 
+First module:
+
 ✅ Eslint is set up, when lint command is run it doesn't produce any errors (if there are warnings score might be less) - 15 points
 
 ✅ Prettier is set up, format:fix command fixes issues - 15 points
