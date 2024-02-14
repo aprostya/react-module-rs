@@ -2,6 +2,8 @@ Small beer search project.
 
 First module:
 
+https://github.com/rolling-scopes-school/tasks/blob/master/react/modules/module01/README.md
+
 ✅ Eslint is set up, when lint command is run it doesn't produce any errors (if there are warnings score might be less) - 15 points
 
 ✅ Prettier is set up, format:fix command fixes issues - 15 points
