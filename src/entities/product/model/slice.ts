@@ -3,7 +3,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { IProductItem } from './types';
 import { IProductQueryParams } from '../../../shared/lib/types';
 import { API_ROUTES, STATUSES } from '../../../shared/lib/enums';
-import { getSelectedFiltersQueryString } from '../../../shared/lib/utils';
 
 type ICardsList = { cardList: Array<IProductItem>; status: STATUSES };
 
@@ -12,24 +11,19 @@ const initialState: ICardsList = {
   status: STATUSES.LOADING,
 };
 
-export const fetchCardData = createAsyncThunk(
-  'filters/fetchCardData',
+export const fetchAbilityData = createAsyncThunk(
+  'filters/fetchAbilityData',
   async (params: IProductQueryParams) => {
-    const { searchValue, selectedFilters } = params;
-    const isFiltersNotEmpty = selectedFilters.some(
-      (item) => item.filters.length > 0
-    );
+    const { searchValue } = params;
     let response: AxiosResponse;
-    if (isFiltersNotEmpty) {
+    if (searchValue !== '') {
       response = await axios.get(
-        `${
-          API_ROUTES.CARDS
-        }?search=${searchValue}&${getSelectedFiltersQueryString(
-          selectedFilters
-        )}`
+        `${API_ROUTES.BASE_URL}/beers?beer_name=${searchValue}`
       );
     } else {
-      response = await axios.get(`${API_ROUTES.CARDS}?search=${searchValue}`);
+      response = await axios.get(
+        `${API_ROUTES.BASE_URL}/beers?page=1&per_page=10`
+      );
     }
     return response.data;
   }
@@ -40,15 +34,15 @@ const cardSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchCardData.pending, (state) => {
+    builder.addCase(fetchAbilityData.pending, (state) => {
       state.status = STATUSES.LOADING;
       state.cardList = [];
     });
-    builder.addCase(fetchCardData.fulfilled, (state, action) => {
+    builder.addCase(fetchAbilityData.fulfilled, (state, action) => {
       state.status = STATUSES.SUCCESS;
       state.cardList = action.payload;
     });
-    builder.addCase(fetchCardData.rejected, (state) => {
+    builder.addCase(fetchAbilityData.rejected, (state) => {
       state.status = STATUSES.ERROR;
       state.cardList = [];
     });

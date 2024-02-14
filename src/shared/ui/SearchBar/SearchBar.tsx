@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeSearchValue } from '../../../entities/filter/model/slice';
 import SearchIcon from '../../../assets/searchIcon.svg';
+import { useLocalStorageState } from '../../../shared/lib/useLocalStorage';
 import './searchBar.scss';
 
 export const SearchBar: React.FC = () => {
   const dispatch = useDispatch();
-  const [value, setInputValue] = useState<string>('');
+  const [value, setInputValue] = useLocalStorageState('searchValue', '');
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value.replace(/^\s+/, '').replace(/\s+/g, ' ');
     setInputValue(value);

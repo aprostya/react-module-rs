@@ -1,26 +1,8 @@
-$red: #db3236;
-$green: #3cba54;
-$blue: #4885ed;
-$yellow: #f4c20d;
 $white: #fff;
 $black: #000;
-$green: #3cba54;
-$blue: #4885ed;
-$red: #db3236;
 $duration: 0.15s;
 
 @mixin display-flex($direction) {
   display: flex;
   flex-direction: $direction;
-}
-
-@mixin filter-buttons($color) {
-  background-color: $color;
-  color: $white;
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $color;
-    color: $white;
-  }
 }

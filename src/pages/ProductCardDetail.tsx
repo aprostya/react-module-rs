@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 
 export const ProductCardDetail: React.FC = () => {
-  const { title } = useParams();
+  const { id } = useParams();
   return (
     <section className="cards-list">
-      <h3>{title}</h3>
+      <h3>{id}</h3>
     </section>
   );
 };
