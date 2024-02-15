@@ -23,13 +23,13 @@ export const ProductCardList: React.FC = () => {
           return <EmptyResult />;
         } else {
           return cardList?.map(
-            ({ id, name, description, image_url, first_brewed }) => (
+            ({ id, title, price, description, category: { image } }) => (
               <ProductCard
                 id={id}
-                name={name}
+                title={title}
                 description={description}
-                imageUrl={image_url}
-                firstBrewed={first_brewed}
+                image={image}
+                price={price}
               />
             )
           );

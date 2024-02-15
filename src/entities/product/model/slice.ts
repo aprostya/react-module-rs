@@ -19,11 +19,11 @@ export const fetchAbilityData = createAsyncThunk(
     let response: AxiosResponse;
     if (searchValue !== '') {
       response = await axios.get(
-        `${API_ROUTES.BASE_URL}/beers?beer_name=${searchValue}`
+        `${API_ROUTES.BASE_URL}/products?title=${searchValue}`
       );
     } else {
       response = await axios.get(
-        `${API_ROUTES.BASE_URL}/beers?page=1&per_page=10`
+        `${API_ROUTES.BASE_URL}/products?limit=10&offset=2`
       );
     }
     return response.data;

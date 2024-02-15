@@ -1,34 +1,32 @@
 import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
-// TODO extend IProductItem and remapping ?
-type IProductItemProps = {
+type IProductCardProps = {
   id: number;
-  name: string;
-  tagline?: string;
-  firstBrewed: string;
+  title: string;
+  price: number;
   description: string;
-  imageUrl: string;
+  image: string;
 };
 
 export const ProductCard = ({
   id,
-  name,
+  title,
   description,
-  imageUrl,
-  firstBrewed,
-}: IProductItemProps) => {
+  image,
+  price,
+}: IProductCardProps) => {
   return (
-    <Link key={name} to={`/product/${id}`} className="card-list-wrapper">
+    <Link key={id} to={`/product/${id}`} className="card-list-wrapper">
       <section className="cards-list">
         <article className="card-list-item">
           <div className="card-list-item__img-container">
-            <img src={imageUrl} alt={imageUrl} />
+            <img src={image} alt={'Product image'} />
           </div>
           <div className="card-list-item-text">
-            <h3>{name}</h3>
+            <h3>{title}</h3>
             <p className="card-list-item-text__descr">{description}</p>
-            <p>{firstBrewed}</p>
+            <p>{price}</p>
           </div>
         </article>
       </section>
