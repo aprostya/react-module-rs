@@ -1,18 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { changeSearchValue } from '../../../entities/filter/model/slice';
 import SearchIcon from '../../../assets/searchIcon.svg';
-import { useLocalStorageState } from '../../../shared/lib/useLocalStorage';
 import './searchBar.scss';
 
-export const SearchBar: React.FC = () => {
-  const dispatch = useDispatch();
-  const [value, setInputValue] = useLocalStorageState('searchValue', '');
-  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value.replace(/^\s+/, '').replace(/\s+/g, ' ');
-    setInputValue(value);
-    dispatch(changeSearchValue(value));
-  };
+interface ISearchBarProps {
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+}
 
+export const SearchBar = ({ value, handleChange }: ISearchBarProps) => {
   return (
     <div className="input-container">
       <p className="input-container__title">Search by keyword</p>
@@ -21,7 +15,7 @@ export const SearchBar: React.FC = () => {
           <input
             placeholder="Type to search..."
             value={value}
-            onChange={handleChangeInput}
+            onChange={handleChange}
           />
           <span className="input-search__icon">
             <SearchIcon />
