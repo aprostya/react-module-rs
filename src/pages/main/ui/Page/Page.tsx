@@ -1,13 +1,13 @@
-import { ProductCardList } from '../features/ProductList/index';
-import { ResultsInfo } from '../features/ResultsInfo/ui/ResultsInfo';
-import { ProductSearch } from '../features/ProductSearch';
+import { ProductCardList } from '../../../../features/ProductList/index';
+import { ResultsInfo } from '../../../../features/ResultsInfo/ui/ResultsInfo';
+import { ProductSearch } from '../../../../features/ProductSearch';
 import { useState } from 'react';
 
 const ErrorComponent: React.FC = () => {
   throw new Error('Error in Main Component');
 };
 
-export const Main: React.FC = () => {
+export const MainPage: React.FC = () => {
   const [isErrorComponent, showErrorComponent] = useState(false);
   return (
     <>

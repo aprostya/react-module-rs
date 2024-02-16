@@ -1,7 +1,7 @@
 import './styles/app.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ProductCardDetail } from '../pages/ProductCardDetail';
-import { Main } from '../pages/Main';
+import { ProductCardPage } from '../pages/ProductCard/ui/Page/Page';
+import { MainPage } from '../pages/main/index';
 import ErrorBoundary from '../shared/ui/ErrorBoundary';
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
             path="/"
             element={
               <ErrorBoundary>
-                <Main />
+                <MainPage />
               </ErrorBoundary>
             }
           />
-          <Route path="/product/:id" element={<ProductCardDetail />} />
+          <Route path="/product/:id" element={<ProductCardPage />} />
         </Routes>
       </div>
     </BrowserRouter>
