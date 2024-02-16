@@ -17,8 +17,8 @@ export const ProductCard = ({
   price,
 }: IProductCardProps) => {
   return (
-    <Link key={id} to={`/product/${id}`} className="card-list-wrapper">
-      <section className="cards-list">
+    <section className="cards-list">
+      <Link to={`/product/${id}`} className="card-list-wrapper">
         <article className="card-list-item">
           <div className="card-list-item__img-container">
             <img src={image} alt={'Product image'} />
@@ -29,7 +29,7 @@ export const ProductCard = ({
             <p>{price}</p>
           </div>
         </article>
-      </section>
-    </Link>
+      </Link>
+    </section>
   );
 };

@@ -22,9 +22,7 @@ export const fetchAbilityData = createAsyncThunk(
         `${API_ROUTES.BASE_URL}/products?title=${searchValue}`
       );
     } else {
-      response = await axios.get(
-        `${API_ROUTES.BASE_URL}/products?limit=10&offset=2`
-      );
+      response = await axios.get(`${API_ROUTES.BASE_URL}/products`);
     }
     return response.data;
   }

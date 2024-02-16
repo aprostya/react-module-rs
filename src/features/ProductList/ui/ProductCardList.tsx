@@ -25,6 +25,7 @@ export const ProductCardList: React.FC = () => {
           return cardList?.map(
             ({ id, title, price, description, category: { image } }) => (
               <ProductCard
+                key={id}
                 id={id}
                 title={title}
                 description={description}
