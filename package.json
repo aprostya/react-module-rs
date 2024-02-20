@@ -19,19 +19,24 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "husky": "^9.0.10",
     "nanoid": "^4.0.2",
+    "postcss-custom-media": "^10.0.3",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1",
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
+    "stylelint-config-css-modules": "^4.4.0",
     "vite-plugin-svgr": "^3.2.0"
   },
   "lint-staged": {
     "*.{js,css,ts,tsx,jsx}": [
       "prettier --write",
       "eslint --fix"
-    ]
+    ],
+    "*.{css,scss}": "stylelint --fix"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -47,9 +52,14 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-stylelint": "^0.1.1",
     "lint-staged": "^15.2.2",
+    "postcss-import": "^16.0.1",
     "prettier": "^3.0.3",
     "sass": "^1.66.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-prettier": "^5.0.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.5"
   }

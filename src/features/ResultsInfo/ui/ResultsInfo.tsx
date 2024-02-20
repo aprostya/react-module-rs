@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../app/appStore';
-import './results.scss';
+import styles from './styles.module.css';
 
 export const ResultsInfo: React.FC = () => {
   const cardListLength = useSelector(
@@ -9,8 +9,6 @@ export const ResultsInfo: React.FC = () => {
   );
 
   return (
-    <span className="results-info-container">
-      Showing {cardListLength} results
-    </span>
+    <span className={styles.container}>Showing {cardListLength} results</span>
   );
 };

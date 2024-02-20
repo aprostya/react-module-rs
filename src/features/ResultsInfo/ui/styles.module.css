@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-self: center;
+  font-size: 1.4rem;
+  margin: 20px 0;
+  order: 2;
+}
+
+@media (--s-viewport) {
+  .container {
+    margin: 0 auto;
+  }
+}

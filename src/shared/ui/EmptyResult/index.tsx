@@ -1,9 +1,9 @@
 import React from 'react';
-import './empty.scss';
+import styles from './styles.module.css';
 
 export const EmptyResult: React.FC = () => {
   return (
-    <div className="empty-result">
+    <div className={styles.container}>
       <h3>No results found</h3>
     </div>
   );

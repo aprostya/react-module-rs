@@ -1,5 +1,5 @@
 import SearchIcon from '../../../assets/searchIcon.svg';
-import './searchBar.scss';
+import styles from './styles.module.css';
 
 interface ISearchBarProps {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -8,16 +8,16 @@ interface ISearchBarProps {
 
 export const SearchBar = ({ value, handleChange }: ISearchBarProps) => {
   return (
-    <div className="input-container">
-      <p className="input-container__title">Search by keyword</p>
-      <div className="input-wrapper">
-        <div className="input-search">
+    <div className={styles.root}>
+      <p className={styles.title}>Search by keyword</p>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
           <input
             placeholder="Type to search..."
             value={value}
             onChange={handleChange}
           />
-          <span className="input-search__icon">
+          <span className={styles.icon}>
             <SearchIcon />
           </span>
         </div>

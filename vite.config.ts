@@ -21,11 +21,10 @@ export default defineConfig({
       '/api/v1': 'http://localhost:5001/',
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "../src/shared/variables.scss";`,
-      },
-    },
-  },
+  // css: {
+  //   modules: {
+  //     localsConvention: 'camelCase',
+  //     generateScopedName: '[name]__[local]__[hash:8]',
+  //   },
+  // },
 });

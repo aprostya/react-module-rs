@@ -1,5 +1,4 @@
-@import '../../shared/variables.scss';
-
+/* Reset box model for all elements */
 *,
 *:before,
 *:after {
@@ -8,12 +7,13 @@
   box-sizing: inherit;
 }
 
+/* Set base font size for easier rem units */
 html {
   font-size: 62.5%;
 }
 
 body {
-  background-color: $white;
+  background-color: var(--color-white);
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
@@ -24,23 +24,12 @@ body {
   flex-wrap: wrap;
   width: auto;
   height: 100vh;
-  background-color: $white;
+  background-color: var(--color-white);
   padding: 3rem;
 }
 
 .button-error {
   background: rgb(202, 60, 60);
   color: white;
-  font-size: 1.2rem;
-  /* this is a maroon */
-}
-
-.results-container,
-.results-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  @media (min-width: 770px) {
-    flex-direction: row;
-  }
+  font-size: 1.2rem; /* Consider using rem units for font size for better responsiveness */
 }

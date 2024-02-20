@@ -1,4 +1,4 @@
-import './styles/app.scss';
+import './styles/app.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProductCardPage } from '../pages/ProductCard/ui/Page/Page';
 import { MainPage } from '../pages/main/index';

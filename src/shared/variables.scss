@@ -1,8 +1,0 @@
-$white: #fff;
-$black: #000;
-$duration: 0.15s;
-
-@mixin display-flex($direction) {
-  display: flex;
-  flex-direction: $direction;
-}

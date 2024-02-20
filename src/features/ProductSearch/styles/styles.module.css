@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (--s-viewport) {
+  .container {
+    width: 500px;
+    margin-bottom: 2rem;
+  }
+}
+
+.title {
+  color: var(--color-dark);
+  font-size: 4rem;
+}
