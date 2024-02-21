@@ -5,9 +5,3 @@
   margin: 20px 0;
   order: 2;
 }
-
-@media (--s-viewport) {
-  .container {
-    margin: 0 auto;
-  }
-}

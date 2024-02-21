@@ -8,6 +8,7 @@ import { fetchAbilityData } from '../../../entities/product/model/slice';
 import { STATUSES } from '../../../shared/lib/enums';
 import { EmptyResult } from '../../../shared/ui/EmptyResult';
 import { useLocalStorageState } from '../../../shared/lib/useLocalStorage';
+import Spinner from '../../../shared/ui/Loader';
 
 export const ProductCardList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -39,7 +40,7 @@ export const ProductCardList: React.FC = () => {
         }
 
       default:
-        return <div>Content loading</div>;
+        return <Spinner size={50} />;
     }
   }, [status, cardList, cardListLength]);
 
