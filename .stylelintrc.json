@@ -3,5 +3,8 @@
     "stylelint-config-standard",
     "stylelint-prettier/recommended",
     "stylelint-config-css-modules"
-  ]
+  ],
+  "rules": {
+    "unit-allowed-list": ["em", "rem", "s"]
+  }
 }

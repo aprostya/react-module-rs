@@ -36,8 +36,7 @@
     "*.{js,css,ts,tsx,jsx}": [
       "prettier --write",
       "eslint --fix"
-    ],
-    "*.{css,scss}": "stylelint --fix"
+    ]
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
