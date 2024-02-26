@@ -10,7 +10,7 @@ export const SearchBar = ({ value, handleChange }: ISearchBarProps) => {
   return (
     <div className={styles.root}>
       <p className={styles.title}>Search by keyword</p>
-      <div className={styles.container}>
+      <div className={styles['container-bar']}>
         <div className={styles.wrapper}>
           <input
             placeholder="Type to search..."
