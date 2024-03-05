@@ -10,7 +10,7 @@
   gap: 10px;
   width: 100%;
   max-width: 100%;
-  @media screen and (min-width: 1023px) {
+  @media only screen and (--m-viewport) {
     gap: 16px 9px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

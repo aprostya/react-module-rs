@@ -1,16 +1,16 @@
 import React, { useEffect, useMemo } from 'react';
 import styles from './styles.module.css';
-import { ProductCard } from '../../../entities/product/ui/ProductCard/ProductCard';
-import { ProductSearch } from '../../ProductSearch';
+import { FilmCard } from '../../../entities/film/ui/FilmCard/FilmCard';
+import { FilmSearch } from '../../FilmSearch';
 import { useSelector } from 'react-redux';
 import { useAppDispatch, RootState } from '../../../app/appStore';
-import { fetchAbilityData } from '../../../entities/product/model/slice';
+import { fetchAbilityData } from '../../../entities/film/model/slice';
 import { STATUSES } from '../../../shared/lib/enums';
 import { EmptyResult } from '../../../shared/ui/EmptyResult';
 import { useLocalStorageState } from '../../../shared/lib/useLocalStorage';
 import Spinner from '../../../shared/ui/Loader';
 
-export const ProductCardList: React.FC = () => {
+export const FilmCardList: React.FC = () => {
   const dispatch = useAppDispatch();
   const { cardList, status } = useSelector((state: RootState) => state.cards);
   const [searchValue, setInputValue] = useLocalStorageState('searchValue', '');
@@ -20,6 +20,8 @@ export const ProductCardList: React.FC = () => {
     setInputValue(value);
   };
 
+  console.log('cardList');
+
   const getCardListComponent = useMemo(() => {
     switch (status) {
       case STATUSES.ERROR:
@@ -28,14 +30,8 @@ export const ProductCardList: React.FC = () => {
         if (cardListLength === 0) {
           return <EmptyResult />;
         } else {
-          return cardList?.map(({ id, title, price, category: { image } }) => (
-            <ProductCard
-              key={id}
-              id={id}
-              title={title}
-              image={image}
-              price={price}
-            />
+          return cardList?.map(({ id, title, poster_path }) => (
+            <FilmCard key={id} id={id} title={title} poster={poster_path} />
           ));
         }
 
@@ -50,7 +46,7 @@ export const ProductCardList: React.FC = () => {
 
   return (
     <div className={styles.root}>
-      <ProductSearch value={searchValue} handleChange={handleChangeInput} />
+      <FilmSearch value={searchValue} handleChange={handleChangeInput} />
       <article className={styles['product-list']}>
         {getCardListComponent}
       </article>
